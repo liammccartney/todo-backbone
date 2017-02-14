@@ -1,14 +1,8 @@
-$(function() {
-    var AppView = Backbone.View.extend({
-        el: '#container',
-        template: _.template("<h3>Hello <%= who %></h3>"),
-        initialize: function() {
-            this.render();
-        },
-        render: function() {
-            this.$el.html(this.template({who: 'world!'}));
-        }
-    });
+var app = {}; //create namespace for our app
 
-    var appView = new AppView()
+app.Todo = Backbone.Model.extend({
+    defaults: {
+        title: '',
+        completed: false
+    }
 });
